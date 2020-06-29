@@ -8,7 +8,7 @@ import Category from '../models/Category';
 
 interface Request {
   title: string;
-  type: 'icome' | 'outcome';
+  type: 'income' | 'outcome';
   value: number;
   category: string;
 }
@@ -16,8 +16,8 @@ interface Request {
 class CreateTransactionService {
   public async execute({
     title,
-    value,
     type,
+    value,
     category,
   }: Request): Promise<Transaction> {
     const transactionsRepository = getCustomRepository(TransactionsRepository);

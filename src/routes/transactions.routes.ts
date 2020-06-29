@@ -24,13 +24,13 @@ transactionsRouter.get('/', async (request, response) => {
 });
 
 transactionsRouter.post('/', async (request, response) => {
-  const { title, value, type, category } = request.body;
+  const { title, type, value, category } = request.body;
   const createTransaction = new CreateTransactionService();
 
   const transaction = await createTransaction.execute({
     title,
-    value,
     type,
+    value,
     category,
   });
 
